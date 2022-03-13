@@ -1,0 +1,24 @@
+<div *ngIf="loading">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<mat-card class="table-responsive-vertical">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Number</th>
+        <th scope="col">Monthy Price</th>
+        <th scope="col">Setup Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tel of phones">
+        <th>{{ tel?.id }}</th>
+        <td>{{ tel?.value }}</td>
+        <td>{{ tel?.monthyPrice | currency: "BRL" }}</td>
+        <td>{{ tel?.setupPrice | currency: "BRL" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</mat-card>
+<br />
